@@ -5,6 +5,16 @@
 Лучшее тестовое в мире :D
 
 #### 2. 
+```js
+function getFieldInfo(caseTypeInfo, tag) {
+        const field = caseTypeInfo.Blocks
+                .reduce((acc, block) => {acc.push(...block.Lines); return acc}, [])
+                .reduce((acc, line) => {acc.push(...line.Fields); return acc}, [])
+                .find(field => field.Tag === tag)
+
+        return field? field: `Tag not found`;
+}
+```
 
 #### 3. Что не так с json
 Если вопрос про валидность JSON, то он валидный. Скорее всего он должен выглядить так:
